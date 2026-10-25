@@ -18,7 +18,7 @@ Dưới đây là hướng dẫn chi tiết để chạy dự án trên máy cá
 6. **Nạp dữ liệu mẫu (Bắt buộc):**
    - Mở SQL Server Management Studio (SSMS), kết nối vào `(localdb)\MSSQLLocalDB`.
    - Chọn đúng Database `ExamOnlineDB`.
-   - Mở file `DatabaseScript.sql` (có trong thư mục dự án) và bấm **Execute (F5)** để tạo dữ liệu mẫu (Môn học, Câu hỏi).
+   - Mở file `ExamOnlineDB.sql` (có trong thư mục dự án) và bấm **Execute (F5)** để tạo dữ liệu mẫu (Môn học, Câu hỏi).
 7. Bấm **F5** trong Visual Studio để chạy dự án trên trình duyệt.
 
 ## 3. Quy tắc làm việc nhóm (Git)
