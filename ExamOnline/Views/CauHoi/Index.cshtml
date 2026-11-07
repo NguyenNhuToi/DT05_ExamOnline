@@ -1,0 +1,42 @@
+@model IEnumerable<ExamOnline.Models.CauHoi>
+
+@{
+    ViewData["Title"] = "Danh sách Câu hỏi";
+}
+
+<h2 class="mb-3">Danh sách Câu hỏi</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"></i> Thêm câu hỏi mới</a>
+</p>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table-primary">
+        <tr>
+            <th>Mã</th>
+            <th>Nội dung câu hỏi</th>
+            <th>Chủ đề</th>
+            <th>Độ khó</th>
+            <th class="text-center">Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NoiDung</td>
+                <!-- Chỉ lấy Tên Chủ Đề để hiển thị, không lấy cả cục object -->
+                <td>@(item.ChuDe != null ? item.ChuDe.TenChuDe : "N/A")</td>
+                <td>
+                    @if(item.DoKho == 1) { <span class="badge bg-success">Dễ</span> }
+                    else if(item.DoKho == 2) { <span class="badge bg-warning text-dark">Trung bình</span> }
+                    else { <span class="badge bg-danger">Khó</span> }
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,52 @@
+@model ExamOnline.Models.CauHoi
+
+@{
+    ViewData["Title"] = "Thêm Câu Hỏi Mới";
+}
+
+<h1>Thêm Câu Hỏi Mới</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Dropdown chọn Chủ Đề -->
+            <div class="form-group mb-3">
+                <label asp-for="ChuDeId" class="control-label fw-bold"></label>
+                <select asp-for="ChuDeId" class="form-control" asp-items="ViewBag.ChuDeId">
+                    <option value="">-- Chọn Chủ Đề --</option>
+                </select>
+                <span asp-validation-for="ChuDeId" class="text-danger"></span>
+            </div>
+
+            <!-- Ô nhập Nội dung -->
+            <div class="form-group mb-3">
+                <label asp-for="NoiDung" class="control-label fw-bold"></label>
+                <textarea asp-for="NoiDung" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="NoiDung" class="text-danger"></span>
+            </div>
+
+            <!-- Dropdown chọn Độ khó -->
+            <div class="form-group mb-3">
+                <label asp-for="DoKho" class="control-label fw-bold"></label>
+                <select asp-for="DoKho" class="form-control">
+                    <option value="">-- Chọn Độ Khó --</option>
+                    <option value="1">1 - Dễ</option>
+                    <option value="2">2 - Trung bình</option>
+                    <option value="3">3 - Khó</option>
+                </select>
+                <span asp-validation-for="DoKho" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Lưu Câu Hỏi" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

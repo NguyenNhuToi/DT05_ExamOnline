@@ -1,0 +1,42 @@
+@model ExamOnline.Models.ChuDe
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ChuDe</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="MonHocId" class="control-label"></label>
+                <input asp-for="MonHocId" class="form-control" />
+                <span asp-validation-for="MonHocId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MonHoc" class="control-label"></label>
+                <input asp-for="MonHoc" class="form-control" />
+                <span asp-validation-for="MonHoc" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TenChuDe" class="control-label"></label>
+                <input asp-for="TenChuDe" class="form-control" />
+                <span asp-validation-for="TenChuDe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Quay lại</a>
+</div>

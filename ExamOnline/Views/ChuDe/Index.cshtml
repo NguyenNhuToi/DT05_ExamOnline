@@ -1,0 +1,47 @@
+@model IEnumerable<ExamOnline.Models.ChuDe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MonHocId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonHoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenChuDe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.MonHocId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.MonHoc)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TenChuDe)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

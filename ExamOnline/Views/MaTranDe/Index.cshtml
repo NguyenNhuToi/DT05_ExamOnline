@@ -1,0 +1,159 @@
+﻿@model IEnumerable<ExamOnline.Models.ChuDe>
+
+@{
+    ViewData["Title"] = "Thiết lập Ma trận đề";
+}
+
+<h2 class="mb-4">Thiết lập Ma trận đề thi</h2>
+<hr />
+
+<div class="row mb-4">
+    <div class="col-md-5">
+        <label class="fw-bold mb-2">Chọn Môn Học:</label>
+        <select id="monHocDropdown" class="form-control" asp-items="ViewBag.MonHocId">
+            <option value="">-- Chọn môn học --</option>
+        </select>
+    </div>
+</div>
+
+<table class="table table-bordered text-center" id="bangMaTran">
+    <thead class="table-secondary">
+        <tr>
+            <th class="text-start">Chủ Đề</th>
+            <th>Mức độ Dễ</th>
+            <th>Mức độ Trung Bình</th>
+            <th>Mức độ Khó</th>
+        </tr>
+    </thead>
+    <tbody id="tbodyMaTran">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-start fw-bold">@item.TenChuDe</td>
+                <td><input type="number" class="form-control text-center so-luong" data-chudeid="@item.Id" data-dokho="1" value="0" min="0" /></td>
+                <td><input type="number" class="form-control text-center so-luong" data-chudeid="@item.Id" data-dokho="2" value="0" min="0" /></td>
+                <td><input type="number" class="form-control text-center so-luong" data-chudeid="@item.Id" data-dokho="3" value="0" min="0" /></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="text-end mt-3">
+    <button type="button" id="btnSinhDe" class="btn btn-success btn-lg"><i class="bi bi-gear"></i> Lưu Ma Trận & Sinh Đề</button>
+</div>
+
+<!-- KHU VỰC HIỂN THỊ KẾT QUẢ ĐỀ THI -->
+<div id="ketQuaDeThi" class="mt-5" style="display:none;">
+    <h3 class="text-primary">Đề thi đã được sinh tự động</h3>
+    <hr />
+    <div id="noiDungDeThi"></div>
+</div>
+
+@section Scripts {
+    <script>
+        // 1. Sự kiện khi thay đổi Môn học -> Load lại Chủ đề
+        document.getElementById('monHocDropdown').addEventListener('change', function () {
+            var monHocId = this.value;
+            var tbody = document.getElementById('tbodyMaTran');
+            tbody.innerHTML = '';
+
+            if (monHocId === "") {
+                tbody.innerHTML = '<tr><td colspan="4" class="text-muted">Vui lòng chọn môn học để hiển thị chủ đề</td></tr>';
+                return;
+            }
+
+            fetch('/MaTranDe/GetChuDeByMonHoc?monHocId=' + monHocId)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="4" class="text-danger">Môn học này chưa có chủ đề nào!</td></tr>';
+                        return;
+                    }
+                    data.forEach(function (chuDe) {
+                        var row = `<tr>
+                            <td class="text-start fw-bold">${chuDe.ten}</td>
+                            <td><input type="number" class="form-control text-center so-luong" data-chudeid="${chuDe.id}" data-dokho="1" value="0" min="0" /></td>
+                            <td><input type="number" class="form-control text-center so-luong" data-chudeid="${chuDe.id}" data-dokho="2" value="0" min="0" /></td>
+                            <td><input type="number" class="form-control text-center so-luong" data-chudeid="${chuDe.id}" data-dokho="3" value="0" min="0" /></td>
+                        </tr>`;
+                        tbody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error('Lỗi:', error));
+        });
+
+        // 2. Sự kiện khi bấm nút "Lưu Ma Trận & Sinh Đề"
+        document.getElementById('btnSinhDe').addEventListener('click', function () {
+            var monHocId = document.getElementById('monHocDropdown').value;
+            if (monHocId === "") {
+                alert("Vui lòng chọn môn học!");
+                return;
+            }
+
+            var maTranData = [];
+            var inputs = document.querySelectorAll('.so-luong');
+
+            inputs.forEach(function(input) {
+                var soLuong = parseInt(input.value);
+                if (soLuong > 0) {
+                    maTranData.push({
+                        ChuDeId: parseInt(input.getAttribute('data-chudeid')),
+                        DoKho: parseInt(input.getAttribute('data-dokho')),
+                        SoLuong: soLuong
+                    });
+                }
+            });
+
+            if (maTranData.length === 0) {
+                alert("Vui lòng nhập số lượng câu hỏi cho ít nhất 1 ô!");
+                return;
+            }
+
+            // GỌI API SINH ĐỀ THI (Phần mới thêm)
+            fetch('/MaTranDe/SinhDeThi', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(maTranData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text) });
+                }
+                return response.json();
+            })
+            .then(result => {
+                if(result.success) {
+                    // Hiển thị đề thi ra màn hình
+                    hienThiDeThi(result.data);
+                    alert("Sinh đề thành công! Đã lấy được " + result.data.length + " câu hỏi.");
+                }
+            })
+            .catch(error => {
+                alert("Lỗi: " + error.message);
+            });
+        });
+
+        // Hàm phụ trợ để vẽ đề thi ra màn hình
+        function hienThiDeThi(danhSachCauHoi) {
+            var khuVucKetQua = document.getElementById('ketQuaDeThi');
+            var noiDung = document.getElementById('noiDungDeThi');
+
+            noiDung.innerHTML = ''; // Xóa cũ
+            khuVucKetQua.style.display = 'block'; // Hiện khu vực kết quả
+
+            var stt = 1;
+            danhSachCauHoi.forEach(function(cauHoi) {
+                var doKhoText = cauHoi.doKho === 1 ? "Dễ" : (cauHoi.doKho === 2 ? "Trung bình" : "Khó");
+                var html = `<div class="card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Câu ${stt}: ${cauHoi.noiDung} <span class="badge bg-secondary">${doKhoText}</span></h5>
+                    </div>
+                </div>`;
+                noiDung.innerHTML += html;
+                stt++;
+            });
+        }
+    </script>
+}
