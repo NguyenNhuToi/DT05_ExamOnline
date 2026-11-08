@@ -18,7 +18,7 @@ Dưới đây là hướng dẫn chi tiết để cài đặt và chạy dự á
 6. **Nạp dữ liệu mẫu (Bắt buộc):**
    - Mở SQL Server Management Studio (SSMS), kết nối vào `(localdb)\MSSQLLocalDB`.
    - Chọn đúng Database `ExamOnlineDB`.
-   - Mở file `DatabaseScript.sql` (có trong thư mục dự án) và bấm **Execute (F5)** để tạo dữ liệu mẫu (Môn học, Chủ đề, Câu hỏi).
+   - Mở file `ExamOnlineDB.sql` (có trong thư mục dự án) và bấm **Execute (F5)** để tạo dữ liệu mẫu (Môn học, Chủ đề, Câu hỏi).
 7. Bấm **F5** trong Visual Studio để chạy dự án.
 
 ## 3. Tài khoản mặc định (Dành cho Giảng viên/Admin)
