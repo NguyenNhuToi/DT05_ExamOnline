@@ -1,0 +1,49 @@
+@model IEnumerable<ExamOnlineDB.Models.User>
+@{
+    ViewData["Title"] = "Quản lý tài khoản";
+}
+
+<h2>Quản lý tài khoản</h2>
+<hr />
+@if (TempData["Success"] is string success)
+{
+    <div class="alert alert-success">@success</div>
+}
+@if (TempData["Error"] is string error)
+{
+    <div class="alert alert-danger">@error</div>
+}
+<table class="table table-bordered table-hover">
+    <thead class="table-primary">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Vai trò</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.UserId</td>
+            <td>@user.Username</td>
+            <td>@user.FullName</td>
+            <td>@user.Email</td>
+            <td>@user.Role?.RoleName</td>
+            <td>@(user.IsActive ? "Hoạt động" : "Đã khóa")</td>
+            <td>
+                <form asp-action="ToggleActive" asp-route-id="@user.UserId" method="post" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-sm @(user.IsActive ? "btn-warning" : "btn-success")">
+                        @(user.IsActive ? "Khóa" : "Mở")
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,79 @@
+@model ExamOnlineDB.Models.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white text-center">
+                <h4>Đăng ký tài khoản</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Register" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+                    @if (Model.IsFirstAdmin)
+                    {
+                        <div class="alert alert-info small">
+                            <b>Lần đầu khởi động:</b> Hệ thống chưa có Admin.
+                            Bạn có thể tạo <b>Admin đầu tiên</b> tại đây.
+                            Sau khi có Admin, lựa chọn này sẽ tự ẩn.
+                        </div>
+                    }
+
+                    <div class="mb-3">
+                        <label asp-for="Username" class="form-label"></label>
+                        <input asp-for="Username" class="form-control" autocomplete="username" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="FullName" class="form-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" autocomplete="email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="UserCode" class="form-label"></label>
+                        <input asp-for="UserCode" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="RoleName" class="form-label"></label>
+                        <div>
+                            <label class="me-3"><input type="radio" asp-for="RoleName" value="Student" /> Sinh viên</label>
+                            <label class="me-3"><input type="radio" asp-for="RoleName" value="Teacher" /> Giảng viên</label>
+                            @if (Model.IsFirstAdmin)
+                            {
+                                <label><input type="radio" asp-for="RoleName" value="Admin" /> Admin (đầu tiên)</label>
+                            }
+                        </div>
+                        <span asp-validation-for="RoleName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control" autocomplete="new-password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ConfirmPassword" class="form-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Đăng ký</button>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                Đã có tài khoản? <a asp-action="Login">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

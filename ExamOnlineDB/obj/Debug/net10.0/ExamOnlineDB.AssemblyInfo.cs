@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExamOnlineDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f6ce07ee9d4c4d49eb57a79054e074df158182e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+357f0a1070830c0c5e411346cb00802862f0288d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExamOnlineDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExamOnlineDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

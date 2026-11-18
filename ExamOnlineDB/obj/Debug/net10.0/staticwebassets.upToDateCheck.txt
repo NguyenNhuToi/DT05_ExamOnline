@@ -65,6 +65,7 @@ wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\css\site.css
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\favicon.ico
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\js\exam-take.js
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\js\exam-timer.js
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\js\site.js
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -126,4 +127,3 @@ D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\LICENSE.txt
-D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\js\exam-take.js
