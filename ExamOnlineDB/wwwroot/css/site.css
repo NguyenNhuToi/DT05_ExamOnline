@@ -1,0 +1,148 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    padding-bottom: 60px;
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+.answer-radio:checked + label {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* =========================================================
+   GIAO DIỆN TRANG LÀM BÀI THI (TAKE EXAM)
+   ========================================================= */
+
+/* Hiệu ứng hover cho thẻ câu hỏi */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+    .card:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-color: #b3d7ff;
+    }
+
+/* Phần Header của câu hỏi */
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Các phương án trả lời */
+.form-check {
+    padding: 10px 15px 10px 40px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+    .form-check:hover {
+        background-color: #f1f8ff;
+    }
+
+/* Khi chọn đáp án, làm nổi bật dòng đó */
+.form-check-input:checked + .form-check-label {
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+/* Tùy chỉnh nút Radio to và dễ bấm hơn */
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.15em;
+    margin-left: -1.8em;
+    cursor: pointer;
+}
+
+/* Nhãn trạng thái câu hỏi */
+.badge {
+    font-size: 0.85em;
+    padding: 0.5em 0.8em;
+    border-radius: 20px;
+}
+
+/* Đồng hồ đếm ngược */
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+    color: #856404;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+#countdown {
+    font-weight: 700;
+    font-size: 1.3rem;
+    font-family: monospace;
+    color: #dc3545;
+    letter-spacing: 1px;
+}
+
+/* Nút nộp bài */
+#btnSubmit {
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(25, 135, 84, 0.3);
+    transition: all 0.3s ease;
+}
+
+    #btnSubmit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(25, 135, 84, 0.4);
+    }

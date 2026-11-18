@@ -1,0 +1,48 @@
+﻿@model QuestionListViewModel
+@{
+    ViewData["Title"] = "Ngân hàng câu hỏi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="d-flex justify-content-between align-items-center">
+    <h2>Ngân hàng câu hỏi</h2>
+    <a class="btn btn-success" asp-action="Create">+ Thêm câu hỏi</a>
+</div>
+<div class="row mt-3 bg-light p-2">
+    <div class="col">Tổng: <b>@Model.TotalCount</b></div>
+    <div class="col">Dễ: <b>@Model.EasyCount</b></div>
+    <div class="col">Trung bình: <b>@Model.MediumCount</b></div>
+    <div class="col">Khó: <b>@Model.HardCount</b></div>
+</div>
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nội dung câu hỏi</th>
+            <th>Chủ đề</th>
+            <th>Mức độ</th>
+            <th>Đáp án</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var q in Model.Questions)
+        {
+            <tr>
+                <td>@q.QuestionId</td>
+                <td>@q.Content</td>
+                <td>@q.Topic?.TopicName</td>
+                <td>@(q.DifficultyLevel == 1 ? "Dễ" : q.DifficultyLevel == 2 ? "TB" : "Khó")</td>
+                <td>@q.Options.Count</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@q.QuestionId">Sửa</a>
+                    <form asp-action="Delete" asp-route-id="@q.QuestionId" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-outline-danger"
+                                onclick="return confirm('Xóa mềm câu hỏi?')">
+                            Xóa
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

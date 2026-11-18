@@ -1,0 +1,21 @@
+﻿@model ExamPreviewViewModel
+@{
+    ViewData["Title"] = "Xem trước đề thi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@Model.ExamTitle</h2>
+<p>Thời lượng: <b>@Model.DurationMinutes phút</b></p>
+<ol>
+@foreach (var q in Model.Questions)
+{
+    <li class="mb-3">
+        <strong>@q.Content</strong>
+        <ul class="list-unstyled ms-3">
+        @foreach (var o in q.Options)
+        {
+            <li>@(o.IsCorrect ? "✅" : "◻") @o.Content</li>
+        }
+        </ul>
+    </li>
+}
+</ol>

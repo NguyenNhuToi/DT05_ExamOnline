@@ -1,0 +1,12 @@
+﻿@model DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Bảng điều khiển</h2>
+<div class="row g-3 mt-2">
+    <div class="col-md-3"><div class="card text-bg-primary p-3"><h5>Người dùng</h5><h2>@Model.TotalUsers</h2></div></div>
+    <div class="col-md-3"><div class="card text-bg-success p-3"><h5>Câu hỏi</h5><h2>@Model.TotalQuestions</h2></div></div>
+    <div class="col-md-3"><div class="card text-bg-warning p-3"><h5>Kỳ thi</h5><h2>@Model.TotalExams</h2></div></div>
+    <div class="col-md-3"><div class="card text-bg-info p-3"><h5>Môn học</h5><h2>@Model.TotalSubjects</h2></div></div>
+</div>

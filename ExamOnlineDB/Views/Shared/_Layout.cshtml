@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ExamOnlineDB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ExamOnlineDB</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Quản trị</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Questions" asp-action="Index">Câu hỏi</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Matrix" asp-action="Index">Ma trận</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Preview" asp-action="Index">Xem trước đề</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="Student" asp-controller="Exams" asp-action="Index">Kỳ thi của tôi</a></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Xin chào, User</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid mt-3">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted mt-4">
+        <div class="container py-2">&copy; 2026 - ExamOnlineDB</div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

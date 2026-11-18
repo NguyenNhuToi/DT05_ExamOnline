@@ -1,0 +1,28 @@
+﻿@model MatrixConfigViewModel
+@{
+    ViewData["Title"] = "Thiết lập ma trận đề";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Ma trận đề — @Model.SubjectName</h2>
+<p>
+    Tổng số câu: <b>@Model.TotalQuestions</b> —
+    Trạng thái: <span class="badge @(Model.IsEnough ? "bg-success" : "bg-danger")">
+    @(Model.IsEnough ? "Đủ câu" : "Thiếu câu")
+</span>
+</p>
+<table class="table table-bordered">
+    <thead><tr><th>Chủ đề</th><th>Mức độ</th><th>Yêu cầu</th><th>Khả dụng</th><th>Trạng thái</th></tr></thead>
+    <tbody>
+        @foreach (var r in Model.Rows)
+        {
+            <tr>
+                <td>@r.TopicName</td>
+                <td>@(r.DifficultyLevel == 1 ? "Dễ" : r.DifficultyLevel == 2 ? "TB" : "Khó")</td>
+                <td>@r.RequiredCount</td>
+                <td>@r.AvailableCount</td>
+                <td>@(r.RequiredCount <= r.AvailableCount ? "OK" : "Thiếu")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-success" asp-area="Teacher" asp-controller="Preview" asp-action="Index">Sinh đề & Xem trước</a>
