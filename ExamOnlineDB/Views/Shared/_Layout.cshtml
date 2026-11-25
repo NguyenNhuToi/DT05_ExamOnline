@@ -17,18 +17,50 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navMenu">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Quản trị</a></li>
-                        @if (Context.Session.GetString("RoleName") == "Admin")
+                        @* --- PHẦN MENU ĐÃ CẬP NHẬT THEO PHÂN QUYỀN --- *@
+                        
+                        @* 1. DÀNH CHO ADMIN *@
+                        @if (User.IsInRole("Admin") || Context.Session.GetString("RoleName") == "Admin")
                         {
+                            <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Quản trị</a></li>
                             <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Users" asp-action="Index">Tài khoản</a></li>
                         }
-                        <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Questions" asp-action="Index">Câu hỏi</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Matrix" asp-action="Index">Ma trận</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Preview" asp-action="Index">Xem trước đề</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="Student" asp-controller="Exams" asp-action="Index">Kỳ thi của tôi</a></li>
+
+                        @* 2. DÀNH CHO TEACHER *@
+                        @if (User.IsInRole("Teacher") || Context.Session.GetString("RoleName") == "Teacher")
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Questions" asp-action="Index">Câu hỏi</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Matrix" asp-action="Index">Ma trận</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Exams" asp-action="Index">Quản lý Kỳ thi</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Teacher" asp-controller="Preview" asp-action="Index">Xem trước đề</a></li>
+                        }
+
+                        @* 3. DÀNH CHO STUDENT *@
+                        @if (User.IsInRole("Student") || Context.Session.GetString("RoleName") == "Student")
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-area="Student" asp-controller="Exams" asp-action="Index">Kỳ thi của tôi</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Student" asp-controller="History" asp-action="Index">Lịch sử thi</a></li>
+                        }
                     </ul>
+                    
                     <ul class="navbar-nav">
-                        @if (Context.Session.GetInt32("UserId") != null)
+                        @* KIỂM TRA ĐĂNG NHẬP (Dùng Session hoặc Identity) *@
+                        @if (User.Identity != null && User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <span class="navbar-text text-white me-2">
+                                    Xin chào, @User.Identity.Name
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Đã thêm asp-area="" để trỏ về AccountController ở thư mục gốc -->
+                                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-link nav-link text-white" style="text-decoration: none;">Đăng xuất</button>
+                                </form>
+                            </li>
+                        }
+                        else if (Context.Session.GetInt32("UserId") != null)
                         {
                             <li class="nav-item">
                                 <span class="navbar-text text-white me-2">
@@ -36,16 +68,20 @@
                                 </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+                                <!-- Đã thêm asp-area="" để trỏ về AccountController ở thư mục gốc -->
+                                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-link nav-link text-white" style="text-decoration: none;">Đăng xuất</button>
+                                </form>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Đăng nhập</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="Register">Đăng ký</a>
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Đăng ký</a>
                             </li>
                         }
                     </ul>

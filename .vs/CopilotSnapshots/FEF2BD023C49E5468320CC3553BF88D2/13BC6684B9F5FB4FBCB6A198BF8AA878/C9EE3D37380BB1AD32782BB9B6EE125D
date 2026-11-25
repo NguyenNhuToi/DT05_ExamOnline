@@ -1,0 +1,103 @@
+﻿using ExamOnlineDB.Data;
+using ExamOnlineDB.Models;
+using ExamOnlineDB.Services;
+using ExamOnlineDB.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace ExamOnlineDB.Areas.Student.Controllers;
+
+[Area("Student")]
+public class TakeExamController : Controller
+{
+    private readonly IExamService _examService;
+    private readonly ExamOnlineDBContext _db;
+
+    public TakeExamController(IExamService examService, ExamOnlineDBContext db)
+    {
+        _examService = examService;
+        _db = db;
+    }
+
+    // GET: /Student/TakeExam/Index/5
+    public async Task<IActionResult> Index(int examId)
+    {
+        var studentId = HttpContext.Session.GetInt32("UserId");
+        if (studentId is null)
+            return RedirectToAction("Login", "Account", new { area = "" });
+
+        var ue = await _examService.GetOrCreateUserExamAsync(examId, studentId.Value);
+        if (ue == null)
+            return NotFound("Không tìm thấy kỳ thi hoặc kỳ thi chưa mở.");
+
+        var exam = await _examService.GetExamAsync(examId);
+        if (exam == null)
+            return NotFound();
+
+        // Nếu sinh viên đã nộp bài rồi (Status = 2) thì chuyển thẳng sang trang Kết quả
+        if (ue.Status == 2)
+        {
+            return RedirectToAction(nameof(Result), new { userExamId = ue.UserExamId });
+        }
+
+        var vm = new TakeExamViewModel
+        {
+            UserExam = ue,
+            Exam = exam,
+            EndTime = ue.StartedAt.AddMinutes(exam.DurationMinutes),
+            Questions = ue.Questions.OrderBy(q => q.QuestionOrder).ToList()
+        };
+        return View(vm);
+    }
+
+    // POST: Lưu đáp án tự động
+    [HttpPost]
+    public async Task<IActionResult> SaveAnswer(int userExamQuestionId, int selectedOptionId)
+    {
+        var studentId = HttpContext.Session.GetInt32("UserId");
+        if (studentId is null)
+            return Json(new { success = false });
+
+        var ok = await _examService.SaveAnswerAsync(userExamQuestionId, selectedOptionId);
+        return Json(new { success = ok });
+    }
+
+    // POST: Nộp bài
+    [HttpPost]
+    public async Task<IActionResult> Submit(int userExamId)
+    {
+        var studentId = HttpContext.Session.GetInt32("UserId");
+        if (studentId is null)
+            return Json(new { success = false });
+
+        var submitted = await _examService.SubmitExamAsync(userExamId);
+        if (!submitted)
+            return Json(new { success = false });
+
+        // Chuyển hướng sang trang Kết quả
+        return Json(new
+        {
+            success = true,
+            redirectUrl = Url.Action(nameof(Result), new { userExamId = userExamId })
+        });
+    }
+
+    // GET: Trang xem kết quả bài thi
+    public async Task<IActionResult> Result(int userExamId)
+    {
+        var studentId = HttpContext.Session.GetInt32("UserId");
+        if (studentId is null)
+            return RedirectToAction("Login", "Account", new { area = "" });
+
+        var ue = await _db.UserExams
+            .Include(u => u.Exam)
+            .Include(u => u.Questions).ThenInclude(q => q.Question)
+            .Include(u => u.Questions).ThenInclude(q => q.Options).ThenInclude(o => o.OriginalOption)
+            .FirstOrDefaultAsync(u => u.UserExamId == userExamId && u.StudentId == studentId.Value);
+
+        if (ue == null)
+            return NotFound();
+
+        return View(ue);
+    }
+}

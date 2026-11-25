@@ -63,6 +63,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.min.map
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\css\site.css
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\favicon.ico
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\js\exam-take.js
@@ -122,7 +123,6 @@ D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery-validation\
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery-validation\LICENSE.md
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.js
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.min.js
-D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.min.map
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.slim.js
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\wwwroot\lib\jquery\dist\jquery.slim.min.map

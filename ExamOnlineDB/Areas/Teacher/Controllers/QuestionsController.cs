@@ -12,9 +12,13 @@ public class QuestionsController : Controller
     private readonly ExamOnlineDBContext _db;
     public QuestionsController(ExamOnlineDBContext db) => _db = db;
 
+    private bool IsTeacher() => HttpContext.Session.GetString("RoleName") == "Teacher";
+
     // GET: /Teacher/Questions
     public async Task<IActionResult> Index()
     {
+        if (!IsTeacher())
+            return RedirectToAction("Login", "Account", new { area = "" });
         // Lấy danh sách câu hỏi kèm theo Chủ đề và Đáp án
         var list = await _db.Questions
             .Include(q => q.Topic)
@@ -36,6 +40,8 @@ public class QuestionsController : Controller
     // GET: /Teacher/Questions/Create
     public async Task<IActionResult> Create()
     {
+        if (!IsTeacher())
+            return RedirectToAction("Login", "Account", new { area = "" });
         ViewBag.Topics = await _db.Topics.ToListAsync();
         return View();
     }
@@ -45,22 +51,31 @@ public class QuestionsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("Content,DifficultyLevel,TopicId")] Question question, List<string> optionContent, int correctIndex)
     {
-        // Lọc bỏ các ô đáp án người dùng để trống
-        if (optionContent != null)
-        {
-            optionContent = optionContent.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
-        }
+        // Lọc ô trống nhưng vẫn giữ đúng vị trí đáp án đúng
+        var filteredOptions = (optionContent ?? new List<string>())
+            .Select((content, originalIndex) => new { content, originalIndex })
+            .Where(x => !string.IsNullOrWhiteSpace(x.content))
+            .ToList();
+
+        if (!filteredOptions.Any(x => x.originalIndex == correctIndex))
+            ModelState.AddModelError("", "Vui lòng chọn một đáp án hợp lệ làm đáp án đúng.");
+
+        optionContent = filteredOptions.Select(x => x.content.Trim()).ToList();
 
         // Kiểm tra dữ liệu đầu vào
-        if (string.IsNullOrWhiteSpace(question.Content) || optionContent == null || optionContent.Count < 2)
+        if (string.IsNullOrWhiteSpace(question.Content) || optionContent.Count < 2)
         {
             ModelState.AddModelError("", "Cần nhập nội dung câu hỏi và ít nhất 2 đáp án.");
             ViewBag.Topics = await _db.Topics.ToListAsync();
             return View(question);
         }
 
+        var creatorId = HttpContext.Session.GetInt32("UserId");
+        if (!IsTeacher() || creatorId is null)
+            return RedirectToAction("Login", "Account", new { area = "" });
+
         // Gán thông tin mặc định
-        question.CreatedBy = 2; // Tạm thời gán cứng ID Giảng viên (UserId = 2)
+        question.CreatedBy = creatorId.Value;
         question.CreatedAt = DateTime.Now;
         question.IsActive = true;
 
@@ -68,13 +83,14 @@ public class QuestionsController : Controller
         await _db.SaveChangesAsync(); // Lưu để lấy được QuestionId
 
         // Lưu các đáp án
+        var filteredCorrectIndex = filteredOptions.FindIndex(x => x.originalIndex == correctIndex);
         for (int i = 0; i < optionContent.Count; i++)
         {
             _db.QuestionOptions.Add(new QuestionOption
             {
                 QuestionId = question.QuestionId,
                 Content = optionContent[i],
-                IsCorrect = (i == correctIndex)
+                IsCorrect = (i == filteredCorrectIndex)
             });
         }
         await _db.SaveChangesAsync();
@@ -85,6 +101,8 @@ public class QuestionsController : Controller
     // GET: /Teacher/Questions/Edit/5
     public async Task<IActionResult> Edit(int id)
     {
+        if (!IsTeacher())
+            return RedirectToAction("Login", "Account", new { area = "" });
         var q = await _db.Questions
             .Include(x => x.Options)
             .FirstOrDefaultAsync(x => x.QuestionId == id);
@@ -100,11 +118,30 @@ public class QuestionsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, [Bind("Content,DifficultyLevel,TopicId")] Question question, List<string> optionContent, int correctIndex)
     {
+        if (!IsTeacher())
+            return RedirectToAction("Login", "Account", new { area = "" });
         var q = await _db.Questions
             .Include(x => x.Options)
             .FirstOrDefaultAsync(x => x.QuestionId == id);
 
         if (q == null || !q.IsActive) return NotFound();
+
+        var filteredOptions = (optionContent ?? new List<string>())
+            .Select((content, originalIndex) => new { content, originalIndex })
+            .Where(x => !string.IsNullOrWhiteSpace(x.content))
+            .Select(x => x.content.Trim())
+            .ToList();
+
+        if (string.IsNullOrWhiteSpace(question.Content)
+            || filteredOptions.Count < 2
+            || correctIndex < 0
+            || correctIndex >= (optionContent?.Count ?? 0)
+            || string.IsNullOrWhiteSpace(optionContent?[correctIndex]))
+        {
+            ModelState.AddModelError("", "Cần nội dung câu hỏi, ít nhất 2 đáp án và một đáp án đúng hợp lệ.");
+            ViewBag.Topics = await _db.Topics.ToListAsync();
+            return View(q);
+        }
 
         // Cập nhật thông tin câu hỏi
         q.Content = question.Content;
@@ -116,16 +153,21 @@ public class QuestionsController : Controller
         _db.QuestionOptions.RemoveRange(q.Options);
 
         // Thêm các đáp án mới
+        var filteredCorrectIndex = 0;
         if (optionContent != null)
         {
-            optionContent = optionContent.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
-            for (int i = 0; i < optionContent.Count; i++)
+            var indexedOptions = optionContent
+                .Select((content, originalIndex) => new { content, originalIndex })
+                .Where(x => !string.IsNullOrWhiteSpace(x.content))
+                .ToList();
+            filteredCorrectIndex = indexedOptions.FindIndex(x => x.originalIndex == correctIndex);
+            for (int i = 0; i < indexedOptions.Count; i++)
             {
                 _db.QuestionOptions.Add(new QuestionOption
                 {
                     QuestionId = q.QuestionId,
-                    Content = optionContent[i],
-                    IsCorrect = (i == correctIndex)
+                    Content = indexedOptions[i].content.Trim(),
+                    IsCorrect = (i == filteredCorrectIndex)
                 });
             }
         }
@@ -139,6 +181,8 @@ public class QuestionsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Delete(int id)
     {
+        if (!IsTeacher())
+            return RedirectToAction("Login", "Account", new { area = "" });
         var q = await _db.Questions.FindAsync(id);
         if (q != null)
         {

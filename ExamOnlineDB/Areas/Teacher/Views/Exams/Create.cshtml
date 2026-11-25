@@ -1,0 +1,66 @@
+﻿@model CreateExamViewModel
+@{
+    ViewData["Title"] = "Tạo Kỳ thi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Tạo Kỳ thi Mới</h2>
+    <form asp-action="Create" method="post" class="mt-3">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="ExamTitle" class="form-label">Tên kỳ thi</label>
+                <input asp-for="ExamTitle" class="form-control" />
+                <span asp-validation-for="ExamTitle" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="SubjectId" class="form-label">Môn học</label>
+                <select asp-for="SubjectId" asp-items="ViewBag.Subjects" class="form-select">
+                    <option value="">-- Chọn Môn học --</option>
+                </select>
+                <span asp-validation-for="SubjectId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="MatrixId" class="form-label">Ma trận đề thi</label>
+                <select asp-for="MatrixId" asp-items="ViewBag.Matrices" class="form-select">
+                    <option value="">-- Chọn Ma trận --</option>
+                </select>
+                <span asp-validation-for="MatrixId" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="DurationMinutes" class="form-label">Thời lượng (phút)</label>
+                <input asp-for="DurationMinutes" type="number" class="form-control" />
+                <span asp-validation-for="DurationMinutes" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="StartTime" class="form-label">Thời gian bắt đầu</label>
+                <input asp-for="StartTime" type="datetime-local" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="EndTime" class="form-label">Thời gian kết thúc</label>
+                <input asp-for="EndTime" type="datetime-local" class="form-control" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-ddTHH:mm")" />
+            </div>
+        </div>
+
+        <div class="form-check mb-2">
+            <input asp-for="ShuffleQuestions" class="form-check-input" />
+            <label asp-for="ShuffleQuestions" class="form-check-label">Xáo trộn câu hỏi</label>
+        </div>
+        <div class="form-check mb-3">
+            <input asp-for="ShuffleOptions" class="form-check-input" />
+            <label asp-for="ShuffleOptions" class="form-check-label">Xáo trộn đáp án</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu (Nháp)</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

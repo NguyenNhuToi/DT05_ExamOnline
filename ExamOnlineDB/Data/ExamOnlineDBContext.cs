@@ -67,7 +67,7 @@ public class ExamOnlineDBContext : DbContext
           .HasOne(q => q.Creator)
           .WithMany()
           .HasForeignKey(q => q.CreatedBy);
-
+          
         // FK vòng: SelectedUserExamOptionId -> UserExamOptions (không cascade)
         mb.Entity<UserExamQuestion>()
           .HasOne<UserExamOption>()

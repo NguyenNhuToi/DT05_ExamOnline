@@ -43,8 +43,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xFeGFtc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Student/Views/History/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xIaXN0b3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Student/Views/TakeExam/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xUYWtlRXhhbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Student/Views/TakeExam/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xUYWtlRXhhbVxSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Student/Views/TakeExam/Review.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xUYWtlRXhhbVxSZXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Teacher/Views/Exams/Assign.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xFeGFtc1xBc3NpZ24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Teacher/Views/Exams/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xFeGFtc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Teacher/Views/Exams/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xFeGFtc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Teacher/Views/Exams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xFeGFtc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/K24CNT1-NET/ExamOnline_G4_K24CNT1/ExamOnlineDB/Areas/Teacher/Views/Matrix/Index.cshtml]

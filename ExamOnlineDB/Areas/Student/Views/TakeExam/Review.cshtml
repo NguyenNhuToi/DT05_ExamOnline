@@ -1,0 +1,71 @@
+﻿@model ExamOnlineDB.Models.UserExam
+@{
+    ViewData["Title"] = "Xem lại bài thi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4 mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Xem lại bài thi: @Model.Exam?.ExamTitle</h2>
+        <a asp-action="Result" asp-route-userExamId="@Model.UserExamId" class="btn btn-secondary">Quay lại Kết quả</a>
+    </div>
+
+    <div class="alert alert-info">
+        <strong>Điểm số của bạn: <span class="text-danger fs-4">@Model.TotalScore</span></strong>
+    </div>
+
+    @{
+        int index = 1;
+    }
+    @foreach (var q in Model.Questions.OrderBy(x => x.QuestionOrder))
+    {
+        var selectedOptionId = q.SelectedUserExamOptionId;
+        var selectedOption = q.Options.FirstOrDefault(o => o.UserExamOptionId == selectedOptionId);
+        bool isCorrect = selectedOption != null && selectedOption.IsCorrectSnapshot;
+
+        <div class="card mb-3 border-@(isCorrect ? "success" : (selectedOptionId == null ? "secondary" : "danger"))">
+            <div class="card-header d-flex justify-content-between bg-light">
+                <span><strong>Câu @index.</strong> @q.Question?.Content</span>
+                @if (selectedOptionId == null)
+                {
+                    <span class="badge bg-secondary">Chưa trả lời</span>
+                }
+                else if (isCorrect)
+                {
+                    <span class="badge bg-success">Đúng (+@q.Point điểm)</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">Sai (0 điểm)</span>
+                }
+            </div>
+            <div class="card-body">
+                @foreach (var o in q.Options.OrderBy(o => o.DisplayOrder))
+                {
+                    string optionClass = "";
+                    string icon = "";
+
+                    if (o.IsCorrectSnapshot)
+                    {
+                        optionClass = "text-success fw-bold";
+                        icon = "✅";
+                    }
+                    else if (o.UserExamOptionId == selectedOptionId && !o.IsCorrectSnapshot)
+                    {
+                        optionClass = "text-danger text-decoration-line-through";
+                        icon = "❌";
+                    }
+
+                    <div class="form-check mb-2 @optionClass">
+                        <input class="form-check-input" type="radio" disabled
+                        @(o.UserExamOptionId == selectedOptionId ? "checked" : "") />
+                        <label class="form-check-label">
+                            <b>@o.DisplayLabel.</b> @o.OriginalOption?.Content @icon
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+        index++;
+    }
+</div>

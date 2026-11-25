@@ -594,10 +594,10 @@ C:\Study\K24CNT-NET\k24cnt1_netcore\DT05_ExamOnline-main\ExamOnlineDB\obj\Debug\
 C:\Study\K24CNT-NET\k24cnt1_netcore\DT05_ExamOnline-main\ExamOnlineDB\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\3cl6zqq0hq-{0}-9766w5cv3e-9766w5cv3e.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\ehp1tqrhql-{0}-u0md4211vq-u0md4211vq.gz
-D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\puq7ei1v9o-{0}-w48veni0tg-w48veni0tg.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\bfkvtc8zky-{0}-fr7q2aak1r-fr7q2aak1r.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\yv5xu9ic0d-{0}-l3n5xuwxn8-l3n5xuwxn8.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\cm1om1ssom-{0}-ilo7uva0vt-ilo7uva0vt.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\0f119mdn0p-{0}-qlccset4i1-qlccset4i1.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\wpxhqnp9su-{0}-xzw0cte36n-xzw0cte36n.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\zkhoiehgwh-{0}-jfsiqqwiad-jfsiqqwiad.gz
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\puq7ei1v9o-{0}-fgdw6b4q7r-fgdw6b4q7r.gz

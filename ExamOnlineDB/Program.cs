@@ -1,6 +1,8 @@
 using ExamOnlineDB.Data;
 using ExamOnlineDB.Services; // Đã bỏ comment dòng này
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using ExamOnlineDB.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,7 @@ builder.Services.AddDbContext<ExamOnlineDBContext>(options =>
 // Đã bỏ comment 2 dòng dưới đây để đăng ký Service
 builder.Services.AddScoped<IQuestionService, QuestionService>();
 builder.Services.AddScoped<IExamService, ExamService>();
+builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {

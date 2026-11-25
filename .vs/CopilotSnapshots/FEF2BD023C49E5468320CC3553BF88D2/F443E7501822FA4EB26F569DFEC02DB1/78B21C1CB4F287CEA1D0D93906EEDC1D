@@ -1,0 +1,153 @@
+﻿using ExamOnlineDB.Data;
+using ExamOnlineDB.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace ExamOnlineDB.Services;
+
+public class ExamService : IExamService
+{
+    private readonly ExamOnlineDBContext _db;
+    public ExamService(ExamOnlineDBContext db) => _db = db;
+
+    // Lấy danh sách kỳ thi dành cho sinh viên
+    public Task<List<Exam>> GetExamsForStudentAsync(int studentId)
+        => _db.Exams
+              .Where(e => e.Participants.Any(p => p.StudentId == studentId && p.IsEligible))
+              .Include(e => e.Subject)
+              .ToListAsync();
+
+    // Lấy thông tin chi tiết kỳ thi (bao gồm Ma trận)
+    public Task<Exam?> GetExamAsync(int examId)
+        => _db.Exams.Include(e => e.Matrix).ThenInclude(m => m!.Details)
+                    .FirstOrDefaultAsync(e => e.ExamId == examId);
+
+    // Lấy hoặc tạo mới bài làm cho sinh viên
+    public async Task<UserExam?> GetOrCreateUserExamAsync(int examId, int studentId)
+    {
+        // 1. Kiểm tra xem sinh viên đã có bài làm cho kỳ thi này chưa
+        var ue = await _db.UserExams
+            .Include(u => u.Questions).ThenInclude(q => q.Question)
+            .Include(u => u.Questions).ThenInclude(q => q.Options).ThenInclude(o => o.OriginalOption)
+            .FirstOrDefaultAsync(u => u.ExamId == examId && u.StudentId == studentId);
+
+        if (ue != null) return ue;
+
+        // 2. Nếu chưa có, kiểm tra xem kỳ thi có đang mở không
+        var exam = await GetExamAsync(examId);
+        if (exam == null || exam.Status != 1) // Chỉ cho phép làm bài khi kỳ thi đang Mở (Status = 1)
+        {
+            return null;
+        }
+
+        // 3. Tạo bài làm mới
+        ue = new UserExam
+        {
+            ExamId = examId,
+            StudentId = studentId,
+            GeneratedExamCode = $"UE_{examId}_{studentId}_{DateTime.Now:HHmmss}",
+            StartedAt = DateTime.Now,
+            Status = 1 // 1 = Đang làm bài
+        };
+        _db.UserExams.Add(ue);
+        await _db.SaveChangesAsync();
+
+        // 4. Sinh đề dựa trên Ma trận
+        var details = exam.Matrix?.Details ?? new List<ExamMatrixDetail>();
+        var usedIds = new HashSet<int>();
+        int order = 1;
+
+        foreach (var d in details)
+        {
+            // Lấy câu hỏi theo chủ đề và độ khó
+            var qs = await _db.Questions
+                .Where(q => q.TopicId == d.TopicId
+                         && q.DifficultyLevel == d.DifficultyLevel
+                         && q.IsActive
+                         && !usedIds.Contains(q.QuestionId))
+                .Take(d.QuestionCount)
+                .ToListAsync();
+
+            foreach (var q in qs)
+            {
+                usedIds.Add(q.QuestionId);
+                var ueq = new UserExamQuestion
+                {
+                    UserExamId = ue.UserExamId,
+                    QuestionId = q.QuestionId,
+                    QuestionOrder = order++,
+                    Point = d.ScorePerQuestion
+                };
+                _db.UserExamQuestions.Add(ueq);
+                await _db.SaveChangesAsync();
+
+                // Lấy các đáp án của câu hỏi
+                var opts = await _db.QuestionOptions
+                    .Where(o => o.QuestionId == q.QuestionId)
+                    .ToListAsync();
+
+                // Gán nhãn A, B, C, D... và lưu snapshot đáp án đúng
+                int labelIdx = 0;
+                foreach (var o in opts)
+                {
+                    _db.UserExamOptions.Add(new UserExamOption
+                    {
+                        UserExamQuestionId = ueq.UserExamQuestionId,
+                        OriginalOptionId = o.OptionId,
+                        DisplayLabel = (char)('A' + labelIdx++),
+                        DisplayOrder = labelIdx,
+                        IsCorrectSnapshot = o.IsCorrect // Lưu lại đáp án đúng tại thời điểm sinh đề
+                    });
+                }
+                await _db.SaveChangesAsync();
+            }
+        }
+
+        // Trả về bài làm hoàn chỉnh
+        return await _db.UserExams
+            .Include(u => u.Questions).ThenInclude(q => q.Question)
+            .Include(u => u.Questions).ThenInclude(q => q.Options).ThenInclude(o => o.OriginalOption)
+            .FirstOrDefaultAsync(u => u.UserExamId == ue.UserExamId);
+    }
+
+    // Lưu đáp án (Auto-save khi sinh viên chọn)
+    public async Task<bool> SaveAnswerAsync(int userExamQuestionId, int selectedOptionId)
+    {
+        var ueq = await _db.UserExamQuestions.FindAsync(userExamQuestionId);
+        if (ueq == null) return false;
+        ueq.SelectedUserExamOptionId = selectedOptionId;
+        await _db.SaveChangesAsync();
+        return true;
+    }
+
+    // Nộp bài và chấm điểm
+    public async Task<bool> SubmitExamAsync(int userExamId)
+    {
+        var ue = await _db.UserExams
+            .Include(u => u.Questions).ThenInclude(q => q.Options)
+            .FirstOrDefaultAsync(u => u.UserExamId == userExamId);
+
+        if (ue == null) return false;
+
+        decimal total = 0;
+
+        foreach (var q in ue.Questions)
+        {
+            // Nếu câu này không được chọn -> 0 điểm cho câu đó
+            if (q.SelectedUserExamOptionId == null)
+                continue;
+
+            // Nếu có chọn, kiểm tra xem đáp án đó có đúng không (dựa vào IsCorrectSnapshot)
+            var selectedOption = q.Options.FirstOrDefault(o => o.UserExamOptionId == q.SelectedUserExamOptionId);
+            if (selectedOption != null && selectedOption.IsCorrectSnapshot)
+            {
+                total += q.Point; // Cộng điểm nếu chọn đúng
+            }
+        }
+
+        ue.TotalScore = total;
+        ue.SubmittedAt = DateTime.Now;
+        ue.Status = 2; // 2 = Đã nộp bài
+        await _db.SaveChangesAsync();
+        return true;
+    }
+}

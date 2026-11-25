@@ -1,0 +1,55 @@
+﻿@model ExamOnlineDB.Models.UserExam
+@{
+    ViewData["Title"] = "Kết quả bài thi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white text-center">
+            <h3>@(Model.Status == 2 ? "Kết quả bài thi" : "Nộp bài thành công!")</h3>
+        </div>
+        <div class="card-body text-center">
+            <h4>@Model.Exam?.ExamTitle</h4>
+            <p class="text-muted">Mã bài thi: @Model.GeneratedExamCode</p>
+            
+            <div class="my-4">
+                <h5>Điểm số của bạn</h5>
+                <h1 class="display-1 fw-bold text-danger">@Model.TotalScore</h1>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6 text-start">
+                    <p><strong>Thời gian bắt đầu:</strong> @Model.StartedAt.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                    <p><strong>Thời gian nộp bài:</strong> @(Model.SubmittedAt?.ToString("dd/MM/yyyy HH:mm:ss") ?? "Chưa nộp")</p>
+                    <p>
+                        <strong>Trạng thái:</strong>
+                        @if (Model.Status == 2)
+                        {
+                            <span class="badge bg-success">Đã nộp</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Đang làm bài</span>
+                        }
+                    </p>
+                </div>
+            </div>
+            
+            <hr />
+            <div class="mt-4">
+                <!-- Nút xem chi tiết câu đúng/sai -->
+                <a asp-action="Review" asp-route-userExamId="@Model.UserExamId" class="btn btn-info text-white">
+                    🔍 Xem chi tiết bài làm
+                </a>
+                
+                <a asp-area="Student" asp-controller="History" asp-action="Index" class="btn btn-primary">
+                    Lịch sử thi
+                </a>
+                <a asp-area="Student" asp-controller="Exams" asp-action="Index" class="btn btn-secondary">
+                    Về danh sách kỳ thi
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

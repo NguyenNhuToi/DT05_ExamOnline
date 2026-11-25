@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Kỳ thi của tôi";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var studentId = (int)(ViewBag.StudentId ?? 3);
+    var studentId = (int)(ViewBag.StudentId ?? 0);
 }
 <h2>Danh sách kỳ thi</h2>
 @if (!Model.Exams.Any())
@@ -28,7 +28,7 @@ else
                         {
                             <a class="btn btn-sm btn-primary"
                                asp-area="Student" asp-controller="TakeExam" asp-action="Index"
-                               asp-route-examId="@e.ExamId" asp-route-studentId="@studentId">Vào thi</a>
+                               asp-route-examId="@e.ExamId">Vào thi</a>
                         }
                     </td>
                 </tr>

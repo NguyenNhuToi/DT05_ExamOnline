@@ -1,0 +1,68 @@
+﻿@model ExamListViewModel
+@{
+    ViewData["Title"] = "Quản lý Kỳ thi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Quản lý Kỳ thi</h2>
+        <a class="btn btn-primary" asp-action="Create">+ Tạo kỳ thi mới</a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Mã Kỳ Thi</th>
+                        <th>Tên Kỳ Thi</th>
+                        <th>Môn học</th>
+                        <th>Thời lượng</th>
+                        <th>Trạng thái</th>
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var e in Model.Exams)
+                    {
+                        <tr>
+                            <td>@e.ExamCode</td>
+                            <td>@e.ExamTitle</td>
+                            <td>@e.Subject?.SubjectName</td>
+                            <td>@e.DurationMinutes phút</td>
+                            <td>
+                                @if (e.Status == 1)
+                                {
+                                    <span class="badge bg-success">Đang mở</span>
+                                }
+                                else if (e.Status == 2)
+                                {
+                                    <span class="badge bg-secondary">Đã đóng</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-warning text-dark">Nháp</span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                <a class="btn btn-sm btn-info text-white" asp-action="Details" asp-route-id="@e.ExamId">Chi tiết</a>
+                                <form asp-action="ToggleStatus" asp-route-id="@e.ExamId" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-outline-warning">
+                                        @(e.Status == 1 ? "Đóng" : "Mở")
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

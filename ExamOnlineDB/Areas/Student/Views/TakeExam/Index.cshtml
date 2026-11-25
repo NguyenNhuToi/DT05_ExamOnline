@@ -10,6 +10,7 @@
     </div>
 </div>
 <form id="examForm">
+    @Html.AntiForgeryToken()
     @foreach (var q in Model.Questions)
     {
         <div class="card mb-3">
@@ -35,17 +36,83 @@
             </div>
         </div>
     }
-    <button type="button" id="btnSubmit" class="btn btn-success btn-lg">Nộp bài</button>
+    <button type="button" id="btnSubmit" class="btn btn-success btn-lg mt-3">Nộp bài</button>
 </form>
 
 @section Scripts {
     <script src="~/js/exam-timer.js"></script>
     <script>
-        // Chỉ truyền dữ liệu từ C# sang JS ở đây
+        // ts-nocheck
+        // Lấy token chống giả mạo (CSRF) từ form
+        const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
+        const verificationToken = tokenInput ? tokenInput.value : '';
+
         const endTime = new Date('@Model.EndTime.ToString("yyyy-MM-ddTHH:mm:ss")').getTime();
         const userExamId = @Model.UserExam.UserExamId;
         
-        // Gọi hàm khởi tạo (hàm này sẽ nằm trong file exam-take.js)
-        initTakeExam(endTime, userExamId);
+        // 1. Khởi động đồng hồ đếm ngược (gọi từ file exam-timer.js)
+        startCountdown(endTime, userExamId, verificationToken);
+
+        // 2. Đánh dấu các câu đã trả lời khi load trang
+        document.querySelectorAll('.answer-radio:checked').forEach(function (radio) {
+            const qid = radio.getAttribute('data-qid');
+            const status = document.getElementById('status-' + qid);
+            if (status) {
+                status.className = 'badge bg-success';
+                status.textContent = 'Đã trả lời';
+            }
+        });
+
+        // 3. Tự động lưu đáp án khi click (Dùng XMLHttpRequest để tương thích tốt nhất)
+        document.querySelectorAll('.answer-radio').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                const qid = radio.getAttribute('data-qid');
+                const oid = radio.value;
+                
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", '/Student/TakeExam/SaveAnswer', true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const res = JSON.parse(xhr.responseText);
+                        if (res.success) {
+                            const status = document.getElementById('status-' + qid);
+                            if (status) {
+                                status.className = 'badge bg-success';
+                                status.textContent = 'Đã trả lời';
+                            }
+                        }
+                    }
+                };
+                xhr.send("__RequestVerificationToken=" + encodeURIComponent(verificationToken) +
+                    "&userExamQuestionId=" + qid +
+                    "&selectedOptionId=" + oid);
+            });
+        });
+
+        // 4. Xử lý sự kiện bấm nút Nộp bài
+        const submitButton = document.getElementById('btnSubmit');
+        if (submitButton) {
+            submitButton.addEventListener('click', function () {
+                if (!confirm('Bạn chắc chắn muốn nộp bài? Không thể sửa lại sau khi nộp.')) return;
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", '/Student/TakeExam/Submit', true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const res = JSON.parse(xhr.responseText);
+                        if (res.success) {
+                            alert('Nộp bài thành công!');
+                            window.location.href = res.redirectUrl;
+                        } else {
+                            alert('Có lỗi xảy ra khi nộp bài. Vui lòng thử lại.');
+                        }
+                    }
+                };
+                xhr.send("__RequestVerificationToken=" + encodeURIComponent(verificationToken) +
+                    "&userExamId=" + userExamId);
+            });
+        }
     </script>
 }
