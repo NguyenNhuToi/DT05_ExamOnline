@@ -1,48 +1,99 @@
 ﻿@model QuestionListViewModel
+@using X.PagedList
+@using X.PagedList.Mvc.Core
 @{
     ViewData["Title"] = "Ngân hàng câu hỏi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="d-flex justify-content-between align-items-center">
-    <h2>Ngân hàng câu hỏi</h2>
-    <a class="btn btn-success" asp-action="Create">+ Thêm câu hỏi</a>
-</div>
-<div class="row mt-3 bg-light p-2">
-    <div class="col">Tổng: <b>@Model.TotalCount</b></div>
-    <div class="col">Dễ: <b>@Model.EasyCount</b></div>
-    <div class="col">Trung bình: <b>@Model.MediumCount</b></div>
-    <div class="col">Khó: <b>@Model.HardCount</b></div>
-</div>
-<table class="table table-striped mt-3">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nội dung câu hỏi</th>
-            <th>Chủ đề</th>
-            <th>Mức độ</th>
-            <th>Đáp án</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var q in Model.Questions)
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Ngân hàng câu hỏi</h2>
+        <div>
+            <a class="btn btn-success" asp-action="Create">+ Thêm câu hỏi</a>
+            <a class="btn btn-info text-white" asp-action="Import">📥 Import từ File</a> <!-- Nút mới thêm -->
+        </div>
+    </div>
+
+    <div class="row mt-3 bg-light p-3 rounded mb-3 shadow-sm align-items-center">
+        <div class="col-md-4">
+            <span>Tổng: <b>@Model.TotalCount</b></span>
+        </div>
+        <div class="col-md-2">
+            <span>Dễ: <b>@Model.EasyCount</b></span>
+        </div>
+        <div class="col-md-2">
+            <span>TB: <b>@Model.MediumCount</b></span>
+        </div>
+        <div class="col-md-2">
+            <span>Khó: <b>@Model.HardCount</b></span>
+        </div>
+        
+        <!-- Thanh tìm kiếm -->
+        <div class="col-md-12 mt-2">
+            <form asp-action="Index" method="get" class="d-flex">
+                <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control me-2" placeholder="Tìm kiếm theo nội dung câu hỏi..." />
+                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Nội dung</th>
+                        <th>Chủ đề</th>
+                        <th class="text-center">Mức độ</th>
+                        <th class="text-center">Đáp án</th>
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var q in Model.Questions)
+                    {
+                        <tr>
+                            <td>@q.QuestionId</td>
+                            <td>@q.Content</td>
+                            <td>@q.Topic?.TopicName</td>
+                            <td class="text-center">
+                                @if (q.DifficultyLevel == 1)
+                                {
+                                    <span class="badge bg-success">Dễ</span>
+                                }
+                                else if (q.DifficultyLevel == 2)
+                                {
+                                    <span class="badge bg-warning text-dark">TB</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Khó</span>
+                                }
+                            </td>
+                            <td class="text-center">@q.Options.Count</td>
+                            <td class="text-center">
+                                <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@q.QuestionId">Sửa</a>
+                                <form asp-action="Delete" asp-route-id="@q.QuestionId" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Xóa mềm câu hỏi?')">Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Thanh Phân trang -->
+    <div class="d-flex justify-content-center mt-4">
+        @Html.PagedListPager((IPagedList)ViewBag.PagedList, page => Url.Action("Index", new { page = page, searchString = ViewBag.SearchString }), new PagedListRenderOptions
         {
-            <tr>
-                <td>@q.QuestionId</td>
-                <td>@q.Content</td>
-                <td>@q.Topic?.TopicName</td>
-                <td>@(q.DifficultyLevel == 1 ? "Dễ" : q.DifficultyLevel == 2 ? "TB" : "Khó")</td>
-                <td>@q.Options.Count</td>
-                <td>
-                    <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@q.QuestionId">Sửa</a>
-                    <form asp-action="Delete" asp-route-id="@q.QuestionId" method="post" class="d-inline">
-                        <button type="submit" class="btn btn-sm btn-outline-danger"
-                                onclick="return confirm('Xóa mềm câu hỏi?')">
-                            Xóa
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            LiElementClasses = new string[] { "page-item" },
+            PageClasses = new string[] { "page-link" },
+            UlElementClasses = new string[] { "pagination" }
+        })
+    </div>
+</div>

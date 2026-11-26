@@ -1,0 +1,76 @@
+﻿@model ExamOnlineDB.ViewModels.TopicListViewModel
+@{
+    ViewData["Title"] = "Quản lý Chủ đề";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Chủ đề môn: @Model.SubjectName</h2>
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-header bg-light"><strong>Thêm chủ đề mới</strong></div>
+        <div class="card-body">
+            <form asp-action="CreateTopic" method="post" class="row g-3">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="subjectId" value="@Model.SubjectId" />
+                <div class="col-md-6">
+                    <input type="text" name="topicName" class="form-control" placeholder="Tên chủ đề mới..." required />
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="orderIndex" class="form-control" value="1" placeholder="Thứ tự" />
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-success w-100">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Thứ tự</th>
+                        <th>Tên Chủ Đề</th>
+                        <th class="text-center">Trạng Thái</th>
+                        <th class="text-center">Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Topics)
+                    {
+                        <tr>
+                            <td>@item.OrderIndex</td>
+                            <td>@item.TopicName</td>
+                            <td class="text-center">
+                                @if (item.IsActive)
+                                {
+                                    <span class="badge bg-success">Hoạt động</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Đã khóa</span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                <form asp-action="DeleteTopic" asp-route-id="@item.TopicId" asp-route-subjectId="@Model.SubjectId" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Khóa chủ đề này?')">Khóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

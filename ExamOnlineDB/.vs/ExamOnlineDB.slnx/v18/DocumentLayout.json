@@ -3,6 +3,70 @@
   "WorkspaceRootPath": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\teacher\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\teacher\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\teacher\\views\\questions\\import.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\teacher\\views\\questions\\import.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\teacher\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\teacher\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\models\\viewmodels\\importquestionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:models\\viewmodels\\importquestionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\teacher\\views\\questions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\teacher\\views\\questions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\teacher\\views\\questions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\teacher\\views\\questions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\models\\viewmodels\\profileviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:models\\viewmodels\\profileviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\admin\\views\\subjects\\topics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\admin\\views\\subjects\\topics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\admin\\views\\subjects\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\admin\\views\\subjects\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\admin\\views\\subjects\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\admin\\views\\subjects\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\admin\\views\\subjects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\admin\\views\\subjects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\admin\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\admin\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\models\\viewmodels\\subjectviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:models\\viewmodels\\subjectviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\wwwroot\\js\\exam-timer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:wwwroot\\js\\exam-timer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -27,10 +91,6 @@
       "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:services\\examservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\teacher\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:areas\\teacher\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\services\\iexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:services\\iexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,10 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C69D26FC-C7C1-2D82-5ACF-62CBF0E78066}|ExamOnlineDB.csproj|d:\\k24cnt1-net\\examonline_g4_k24cnt1\\examonlinedb\\areas\\student\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -162,7 +218,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -186,7 +242,231 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Import.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Import.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Questions\\Import.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Import.cshtml",
+              "RelativeToolTip": "Areas\\Teacher\\Views\\Questions\\Import.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAwwDkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:23:45.174Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImportQuestionViewModel.cs",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\ImportQuestionViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\ImportQuestionViewModel.cs",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\ImportQuestionViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\ImportQuestionViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:21:43.982Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProfileViewModels.cs",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\ProfileViewModels.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\ProfileViewModels.cs",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\ProfileViewModels.cs",
+              "RelativeToolTip": "Models\\ViewModels\\ProfileViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T01:47:16.478Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Topics.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Topics.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Subjects\\Topics.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Topics.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Subjects\\Topics.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAwwEsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T01:46:46.162Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuestionsController.cs",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Controllers\\QuestionsController.cs",
+              "RelativeDocumentMoniker": "Areas\\Teacher\\Controllers\\QuestionsController.cs",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Controllers\\QuestionsController.cs",
+              "RelativeToolTip": "Areas\\Teacher\\Controllers\\QuestionsController.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAAAuwCwBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-25T15:26:43.309Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Questions\\Index.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Teacher\\Views\\Questions\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T01:50:33.812Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Questions\\Create.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Create.cshtml",
+              "RelativeToolTip": "Areas\\Teacher\\Views\\Questions\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:16:39.097Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Questions\\Edit.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Questions\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Teacher\\Views\\Questions\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:16:52.173Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Subjects\\Edit.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Subjects\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T01:46:27.902Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAwwG8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T01:47:40.215Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "Views\\Profile\\Index.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAwwEQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T01:48:32.787Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAADwv1wAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-18T16:07:37.411Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Subjects\\Create.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Create.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Subjects\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T01:46:08.57Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Subjects\\Index.cshtml",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Subjects\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Subjects\\Index.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAwwDwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T01:45:46.93Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SubjectsController.cs",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Controllers\\SubjectsController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\SubjectsController.cs",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Controllers\\SubjectsController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\SubjectsController.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAwwKUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T01:45:06.46Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SubjectViewModels.cs",
+              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\SubjectViewModels.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\SubjectViewModels.cs",
+              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\SubjectViewModels.cs",
+              "RelativeToolTip": "Models\\ViewModels\\SubjectViewModels.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T01:44:32.537Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "TakeExamController.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Controllers\\TakeExamController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\TakeExamController.cs",
@@ -199,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Views\\TakeExam\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\TakeExam\\Index.cshtml",
@@ -208,12 +488,11 @@
               "ViewState": "AgIAACEAAAAAAAAAAIAwwDUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-25T15:24:01.35Z",
-              "EditorCaption": "",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 16,
               "Title": "exam-timer.js",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\wwwroot\\js\\exam-timer.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\exam-timer.js",
@@ -227,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "ExamsController.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Controllers\\ExamsController.cs",
               "RelativeDocumentMoniker": "Areas\\Teacher\\Controllers\\ExamsController.cs",
@@ -240,20 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "QuestionsController.cs",
-              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Controllers\\QuestionsController.cs",
-              "RelativeDocumentMoniker": "Areas\\Teacher\\Controllers\\QuestionsController.cs",
-              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Controllers\\QuestionsController.cs",
-              "RelativeToolTip": "Areas\\Teacher\\Controllers\\QuestionsController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T15:26:43.309Z",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Views\\History\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\History\\Index.cshtml",
@@ -262,12 +528,11 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAC4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-25T14:56:37.497Z",
-              "EditorCaption": "",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 19,
               "Title": "Result.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Views\\TakeExam\\Result.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\TakeExam\\Result.cshtml",
@@ -280,7 +545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 21,
               "Title": "ExamService.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Services\\ExamService.cs",
               "RelativeDocumentMoniker": "Services\\ExamService.cs",
@@ -293,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "IExamService.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Services\\IExamService.cs",
               "RelativeDocumentMoniker": "Services\\IExamService.cs",
@@ -306,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 24,
               "Title": "Review.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Views\\TakeExam\\Review.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\TakeExam\\Review.cshtml",
@@ -319,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 25,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Views\\Exams\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\Exams\\Index.cshtml",
@@ -332,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 27,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -345,20 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-18T16:07:37.411Z",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 29,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Exams\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Exams\\Details.cshtml",
@@ -371,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 26,
               "Title": "HistoryController.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Controllers\\HistoryController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\HistoryController.cs",
@@ -384,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 30,
               "Title": "Assign.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Exams\\Assign.cshtml",
               "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Exams\\Assign.cshtml",
@@ -397,7 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 28,
               "Title": "ExamsController.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Student\\Controllers\\ExamsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\ExamsController.cs",
@@ -410,7 +662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 31,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Exams\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Exams\\Create.cshtml",
@@ -423,7 +675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 32,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Teacher\\Views\\Exams\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Teacher\\Views\\Exams\\Index.cshtml",
@@ -436,7 +688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 33,
               "Title": "ExamViewModels.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\ExamViewModels.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\ExamViewModels.cs",
@@ -449,7 +701,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 34,
               "Title": "ExamOnlineDBContext.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Data\\ExamOnlineDBContext.cs",
               "RelativeDocumentMoniker": "Data\\ExamOnlineDBContext.cs",
@@ -462,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 36,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -475,7 +727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 35,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Views\\Users\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Users\\Index.cshtml",
@@ -488,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 38,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Areas\\Admin\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\UsersController.cs",
@@ -501,7 +753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 37,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -514,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 39,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
@@ -527,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 40,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
@@ -540,7 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 41,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\LoginViewModel.cs",
@@ -553,7 +805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 42,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\RegisterViewModel.cs",
@@ -566,7 +818,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 43,
               "Title": "ExamParticipant.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ExamParticipant.cs",
               "RelativeDocumentMoniker": "Models\\ExamParticipant.cs",
@@ -579,7 +831,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 44,
               "Title": "Exam.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\Exam.cs",
               "RelativeDocumentMoniker": "Models\\Exam.cs",
@@ -592,7 +844,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 45,
               "Title": "ExamMatrixDetail.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\ExamMatrixDetail.cs",
               "RelativeDocumentMoniker": "Models\\ExamMatrixDetail.cs",
@@ -605,7 +857,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 46,
               "Title": "QuestionOption.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\QuestionOption.cs",
               "RelativeDocumentMoniker": "Models\\QuestionOption.cs",
@@ -618,7 +870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 47,
               "Title": "Question.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\Question.cs",
               "RelativeDocumentMoniker": "Models\\Question.cs",
@@ -631,7 +883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 48,
               "Title": "Topic.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\Topic.cs",
               "RelativeDocumentMoniker": "Models\\Topic.cs",
@@ -644,7 +896,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 49,
               "Title": "Subject.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\Subject.cs",
               "RelativeDocumentMoniker": "Models\\Subject.cs",
@@ -657,7 +909,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 50,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -670,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 51,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\Models\\Role.cs",
               "RelativeDocumentMoniker": "Models\\Role.cs",

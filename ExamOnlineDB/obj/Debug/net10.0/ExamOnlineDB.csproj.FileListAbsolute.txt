@@ -224,7 +224,6 @@ D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\n
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\rplermnxl5-{0}-tchfgznwy8-tchfgznwy8.gz
-D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\crd8w1o5rb-{0}-78fmr6ioz0-78fmr6ioz0.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\xsq7ljuq9i-{0}-61n19gt1b8-61n19gt1b8.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\eyzw6gtjiv-{0}-bqjiyaj88i-bqjiyaj88i.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\okhkerf5wu-{0}-c2jlpeoesf-c2jlpeoesf.gz
@@ -600,4 +599,8 @@ D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\c
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\0f119mdn0p-{0}-qlccset4i1-qlccset4i1.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\wpxhqnp9su-{0}-xzw0cte36n-xzw0cte36n.gz
 D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\zkhoiehgwh-{0}-jfsiqqwiad-jfsiqqwiad.gz
-D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\puq7ei1v9o-{0}-fgdw6b4q7r-fgdw6b4q7r.gz
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\puq7ei1v9o-{0}-lc0c9kdru6-lc0c9kdru6.gz
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\bin\Debug\net10.0\X.PagedList.dll
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\bin\Debug\net10.0\X.PagedList.EF.dll
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\bin\Debug\net10.0\X.PagedList.Mvc.Core.dll
+D:\K24CNT1-NET\ExamOnline_G4_K24CNT1\ExamOnlineDB\obj\Debug\net10.0\compressed\crd8w1o5rb-{0}-zu00mrz0mr-zu00mrz0mr.gz

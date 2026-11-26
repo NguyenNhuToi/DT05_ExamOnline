@@ -13,7 +13,9 @@
           "Microsoft.AspNetCore.Identity.UI": "10.0.15",
           "Microsoft.Data.SqlClient": "7.1.2",
           "Microsoft.EntityFrameworkCore.Design": "10.0.15",
-          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.15"
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.15",
+          "X.PagedList.EF": "10.6.0",
+          "X.PagedList.Mvc.Core": "10.6.0"
         },
         "runtime": {
           "ExamOnlineDB.dll": {}
@@ -916,6 +918,40 @@
             "localPath": "System.Security.Cryptography.ProtectedData.dll"
           }
         }
+      },
+      "X.PagedList/10.6.0": {
+        "runtime": {
+          "lib/net10.0/X.PagedList.dll": {
+            "assemblyVersion": "10.6.0.0",
+            "fileVersion": "10.6.0.0",
+            "localPath": "X.PagedList.dll"
+          }
+        }
+      },
+      "X.PagedList.EF/10.6.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.15",
+          "X.PagedList": "10.6.0"
+        },
+        "runtime": {
+          "lib/net10.0/X.PagedList.EF.dll": {
+            "assemblyVersion": "10.6.0.0",
+            "fileVersion": "10.6.0.0",
+            "localPath": "X.PagedList.EF.dll"
+          }
+        }
+      },
+      "X.PagedList.Mvc.Core/10.6.0": {
+        "dependencies": {
+          "X.PagedList": "10.6.0"
+        },
+        "runtime": {
+          "lib/net10.0/X.PagedList.Mvc.Core.dll": {
+            "assemblyVersion": "10.6.0.0",
+            "fileVersion": "10.6.0.0",
+            "localPath": "X.PagedList.Mvc.Core.dll"
+          }
+        }
       }
     }
   },
@@ -1253,6 +1289,27 @@
       "sha512": "sha512-zyXIA630BG8DQnWzzS6WATjnnzXdelvJaW9U/qajt+09JV7Xvu8YuvQdwLldmPF4W5jYS76811eGcDdXxGYmfw==",
       "path": "system.security.cryptography.protecteddata/9.0.21",
       "hashPath": "system.security.cryptography.protecteddata.9.0.21.nupkg.sha512"
+    },
+    "X.PagedList/10.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qmz+RBQA3swsFZbEfO9XJi7bsInH9vu2S5/o/68BzkoxqiusqDfJY0Y0s2SCVfeK+EQW3RaPFenfKvEaQQa62Q==",
+      "path": "x.pagedlist/10.6.0",
+      "hashPath": "x.pagedlist.10.6.0.nupkg.sha512"
+    },
+    "X.PagedList.EF/10.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tytz4qmjadkAOdFv8Pu2UCq1hZSrhLhz015E4MfOf2QZVOZDKngFJJLpXm10C25ErFandSExHAzCXG0MDjjtMQ==",
+      "path": "x.pagedlist.ef/10.6.0",
+      "hashPath": "x.pagedlist.ef.10.6.0.nupkg.sha512"
+    },
+    "X.PagedList.Mvc.Core/10.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JMXpLkP1UpKdgFowc7s0o0cBTh0R7bS9gJMWWsnqqz5qXQCBEa8J9+D6b+XWnHq9u8hhxVtQuI20EGwMtypUmw==",
+      "path": "x.pagedlist.mvc.core/10.6.0",
+      "hashPath": "x.pagedlist.mvc.core.10.6.0.nupkg.sha512"
     }
   }
 }

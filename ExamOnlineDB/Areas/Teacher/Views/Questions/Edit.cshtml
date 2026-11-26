@@ -1,6 +1,7 @@
 ﻿@model ExamOnlineDB.Models.Question
 @{
     ViewData["Title"] = "Sửa câu hỏi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     var topics = ViewBag.Topics as List<ExamOnlineDB.Models.Topic> ?? new();
     var opts = Model.Options.ToList();
     var correct = opts.FindIndex(o => o.IsCorrect);

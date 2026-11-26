@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UqucnyPCvb0=",
+  "dgSpecHash": "kBeBlYNsYbg=",
   "success": true,
   "projectFilePath": "D:\\K24CNT1-NET\\ExamOnline_G4_K24CNT1\\ExamOnlineDB\\ExamOnlineDB.csproj",
   "expectedPackageFiles": [
@@ -55,7 +55,10 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.16.0\\system.identitymodel.tokens.jwt.8.16.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.memory.data\\10.0.3\\system.memory.data.10.0.3.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.13\\system.security.cryptography.pkcs.10.0.13.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.21\\system.security.cryptography.protecteddata.9.0.21.nupkg.sha512"
+    "C:\\Users\\ADMIN\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.21\\system.security.cryptography.protecteddata.9.0.21.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\x.pagedlist\\10.6.0\\x.pagedlist.10.6.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\x.pagedlist.ef\\10.6.0\\x.pagedlist.ef.10.6.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\x.pagedlist.mvc.core\\10.6.0\\x.pagedlist.mvc.core.10.6.0.nupkg.sha512"
   ],
   "logs": []
 }

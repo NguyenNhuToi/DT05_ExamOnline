@@ -1,0 +1,58 @@
+﻿@model ExamOnlineDB.ViewModels.ImportQuestionViewModel
+@{
+    ViewData["Title"] = "Nhập câu hỏi từ Excel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Nhập câu hỏi từ File (CSV/Excel)</h2>
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form asp-action="Import" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="TopicId" class="form-label">Chủ đề áp dụng cho các câu hỏi này</label>
+                            <select asp-for="TopicId" class="form-select" asp-items="@(new SelectList(ViewBag.Topics, "TopicId", "TopicName"))">
+                                <option value="">-- Chọn chủ đề --</option>
+                            </select>
+                            <span asp-validation-for="TopicId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FileUpload" class="form-label">Chọn file CSV</label>
+                            <input asp-for="FileUpload" type="file" accept=".csv" class="form-control" />
+                            <span asp-validation-for="FileUpload" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Bắt đầu Import</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-info">
+                <h5>Hướng dẫn định dạng file:</h5>
+                <p>File của bạn phải là file <b>CSV</b> (lưu từ Excel với định dạng CSV UTF-8).</p>
+                <p>Cấu trúc các cột (phân cách bằng dấu phẩy):</p>
+                <ol>
+                    <li><b>Nội dung câu hỏi</b></li>
+                    <li><b>Mức độ</b> (1: Dễ, 2: Trung bình, 3: Khó)</li>
+                    <li><b>Đáp án A</b></li>
+                    <li><b>Đáp án B</b></li>
+                    <li><b>Đáp án C</b></li>
+                    <li><b>Đáp án D</b></li>
+                    <li><b>Đáp án đúng</b> (Nhập A, B, C hoặc D)</li>
+                </ol>
+                <p><i>Ví dụ: Biểu đồ nào dùng để mô tả tương tác?,1,Use Case,Lớp,Triển khai,Thành phần,A</i></p>
+            </div>
+        </div>
+    </div>
+</div>

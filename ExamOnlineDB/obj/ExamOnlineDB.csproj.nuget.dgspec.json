@@ -84,6 +84,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[10.0.15, )"
+            },
+            "X.PagedList.EF": {
+              "target": "Package",
+              "version": "[10.6.0, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[10.6.0, )"
             }
           },
           "imports": [

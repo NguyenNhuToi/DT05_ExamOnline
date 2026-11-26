@@ -1,0 +1,69 @@
+﻿@model ExamOnlineDB.ViewModels.ProfileUpdateViewModel
+@{
+    ViewData["Title"] = "Thông tin cá nhân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Thông tin cá nhân</h2>
+    
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <div class="row mt-3">
+        <!-- Cột cập nhật thông tin -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">Cập nhật thông tin</div>
+                <div class="card-body">
+                    <form asp-action="UpdateInfo" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" asp-for="UserId" />
+                        <div class="mb-3">
+                            <label class="form-label">Mã số</label>
+                            <input asp-for="UserCode" class="form-control" readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FullName" class="form-label">Họ Tên</label>
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cột đổi mật khẩu -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">Đổi mật khẩu</div>
+                <div class="card-body">
+                    <form asp-action="ChangePassword" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="mb-3">
+                            <label class="form-label">Mật khẩu cũ</label>
+                            <input type="password" name="OldPassword" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mật khẩu mới</label>
+                            <input type="password" name="NewPassword" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Xác nhận mật khẩu mới</label>
+                            <input type="password" name="ConfirmPassword" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-warning">Đổi mật khẩu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
